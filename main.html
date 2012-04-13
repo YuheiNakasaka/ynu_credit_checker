@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<title>YNU経済学部必要単位チェッカー</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	</head>
+<body>
+
+<div data-role="page" id="home">
+	<div data-role="header">
+		<h1><font color="#4169e1">home</font></h1>
+	</div>
+	<div data-role="content">
+		<h2><font color="#4169e1">横浜国立大学経済学部　　必要単位チェッカー</font></h2>
+		<hr/>
+		<h3>これは<font color="#4169e1">横浜国立大学経済学部生</font>が卒業に必要な<font color="#4169e1">「専門科目」</font>の単位をチェックするためのサイトです</h3>
+		<p><small>＊ただし大学公式のページではないので万が一トラブルが起きた場合の責任は負いかねます。</small></p>
+			<form action="result.php" method="post">
+			<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup" >
+					<legend>＜学科を選択して下さい＞</legend>
+					<input type="radio" name="gakka" id="keishisu" value="keishisu"checked="checked" />
+					<label for="keishisu">経済システム学科・経済コース</label>
+					<input type="radio" name="gakka" id="houkei"value="houkei" />
+					<label for="houkei">経済システム学科・法と経済コース</label>
+					<input type="radio" name="gakka" id="kokukei" value="kokukei"/>
+					<label for="kokukei">国際経済学科</label>
+				</fieldset>
+			</div>
+<!--専門基礎-->
+			<div data-role="fieldcontain">
+				<label for="senkiso">＜専門基礎科目＞</label>
+				<select name="senkiso[]" id="senkiso" data-native-menu="false" multiple>
+					<option value="2">ポリティカルエコノミー入門</option>
+					<option value="2">ミクロ経済学入門</option>
+					<option value="2">マクロ経済学入門</option>
+					<option value="2">グローバルエコノミー入門</option>
+					<option value="2">経済史入門</option>
+					<option value="2">法学入門</option>
+				</select>
+			</div>
+<!--A群（学部共通）-->
+			<div data-role="fieldcontain">
+				<label for="senkiso">＜A群(学部共通)＞</label>
+				<select name="agun[]" id="agun" data-native-menu="false" multiple>
+					<option value="4">現代経済システム</option>
+					<option value="4">ミクロ経済学</option>
+					<option value="4">マクロ経済学</option>
+					<option value="4">経済原論</option>
+					<option value="4">経済史</option>
+				</select>
+			</div>
+<!--B-1群（経済システム学科・経済コース）-->
+			<div data-role="fieldcontain">
+				<label for="b_1gun">＜B-1群(経済システム学科・経済コース)＞</label>
+				<select name="b_1gun[]" id="b_1gun" data-native-menu="false" multiple>
+					<option value="4">経済学史</option>
+					<option value="4">経済政策</option>
+					<option value="4">数理統計</option>
+					<option value="4">社会思想史</option>
+					<option value="4">比較農業政策</option>
+					<option value="4">計量経済学</option>
+					<option value="4">ゲーム理論</option>
+					<option value="4">日本経済史</option>
+					<option value="4">プログラミングと経済分析</option>
+					<option value="4">地方財政</option>
+					<option value="4">現代経済史</option>
+					<option value="4">国際コミュニケーション</option>
+					<option value="4">現代社会福祉</option>
+					<option value="4">経済統計</option>
+					<option value="4">比較経済システム</option>
+					<option value="4">ファイナンス</option>
+					<option value="4">現代社会科学</option>
+					<option value="4">財政学</option>
+					<option value="4">数理経済学</option>
+					<option value="4">公共経済学</option>
+					<option value="4">金融論</option>
+					<option value="4">労働経済学</option>
+				</select>
+			</div>
+<!--B-2群（経済システム学科・法と経済コース）-->
+			<div data-role="fieldcontain">
+				<label for="b_2gun">＜B-2群 (経済システム学科・法と経済コース)＞</label>
+				<select name="b_2gun[]" id="b_2gun" data-native-menu="false" multiple>
+					<option value="4">社会思想史</option>
+					<option value="4">ゲーム理論</option>
+					<option value="4">地方財政</option>
+					<option value="4">経済政策</option>
+					<option value="4">日本経済史</option>
+					<option value="2">民法1(総論)</option>
+					<option value="2">民法2(物権法)</option>
+					<option value="2">民法3(担保物権法)</option>
+					<option value="2">民法4(債権総論)</option>
+					<option value="2">民法5(債権各論)</option>
+					<option value="2">民法6(家族法)</option>
+					<option value="2">憲法1</option>
+					<option value="2">憲法2</option>
+					<option value="2">行政法1</option>
+					<option value="2">行政法2</option>
+					<option value="2">刑法1</option>
+					<option value="2">刑法2</option>
+					<option value="2">裁判法概論</option>
+					<option value="2">政治学概論</option>
+					<option value="4">金融論</option>
+					<option value="4">ファイナンス</option>
+					<option value="4">財政学</option>
+					<option value="4">公共経済学</option>
+					<option value="4">労働経済学</option>
+					<option value="2">知的財産権法概論</option>
+					<option value="2">国際関係法概論</option>
+					<option value="2">商法1</option>
+					<option value="2">商法2</option>
+					<option value="2">商法3</option>
+					<option value="2">商法4</option>
+					<option value="2">経済法概論</option>
+					<option value="2">租税法概論</option>
+					<option value="2">社会保障法概論</option>
+				</select>
+			</div>
+<!--C群（国際経済学科）-->
+			<div data-role="fieldcontain">
+				<label for="cgun">＜C群(国際経済学科)＞</label>
+				<select name="cgun[]" id="cgun" data-native-menu="false" multiple>
+					<option value="4">経済政策</option>
+					<option value="4">比較農業政策</option>
+					<option value="4">地域経済政策</option>
+					<option value="4">国際環境経済論</option>
+					<option value="4">国際金融</option>
+					<option value="4">世界経済論</option>
+					<option value="4">途上国経済</option>
+					<option value="4">日本経済史</option>
+					<option value="4">現代経済史</option>
+					<option value="4">国際経済史</option>
+					<option value="4">アジア経済史</option>
+					<option value="4">言語コミュニケーションとアイデンティティー</option>
+					<option value="4">財政学</option>
+					<option value="4">公共経済学</option>
+					<option value="4">国際経済学</option>
+					<option value="4">数量ファイナンス</option>
+					<option value="4">産業組織論</option>
+					<option value="4">経済開発論</option>
+					<option value="4">国際関係論</option>
+					<option value="4">中国経済</option>
+					<option value="4">ロシア東欧経済</option>
+					<option value="4">国際貿易政策</option>
+					<option value="4">現代外国為替論</option>
+				</select>
+			</div>
+<!--特殊講義-->
+			<div data-role="fieldcontain">
+				<label for="tokusyu">＜特殊講義＞</label>
+				<select name="tokusyu[]" id="tokusyu" data-native-menu="false" multiple>
+					<option value="4">哲学概論</option>
+					<option value="2">経済数学</option>
+					<option value="2">日本経済と統計</option>
+					<option value="2">資本市場の役割と証券投資</option>
+					<option value="2">社会における実践体験ー富丘会メッセージー</option>
+					<option value="2">インターンシップ</option>
+					<option value="2">キャリア形成論</option>
+					<option value="2">経済学のための日本語</option>
+					<option value="2">ビジネスのための日本語</option>
+					<option value="2">コンテンツビジネスと法</option>
+					<option value="2">比較中小企業政策</option>
+					<option value="2">課題プロジェクト演習 途上国経済</option>
+					<option value="2">課題プロジェクト演習 現代欧米経済史</option>
+					<option value="2">課題プロジェクト演習 地域経済</option>
+					<option value="2">課題プロジェクト演習 英語による日本経済</option>
+					<option value="2">課題プロジェクト演習 英語による経済事情</option>
+					<option value="2">課題プロジェクト演習 英語による経済学</option>
+					<option value="2">課題プロジェクト演習 都市と法</option>
+					<option value="2">課題プロジェクト演習 初歩からの英語によるスピーチとディベート</option>
+					<option value="2">課題プロジェクト演習 ゲーム理論</option>
+				</select>
+			</div>
+<!--他学部開講の専門科目-->
+			<div data-role="fieldcontain">
+				<label for="other">＜他学部開講の専門科目(取得単位数)＞</label>
+				<select name="other[]" id="other" data-native-menu="false">
+					<option value="0">0単位</option>
+					<option value="1">1単位</option>
+					<option value="2">2単位</option>
+					<option value="3">3単位</option>
+					<option value="4">4単位</option>
+					<option value="5">5単位</option>
+					<option value="6">6単位</option>
+					<option value="7">7単位</option>
+					<option value="8">8単位</option>
+					<option value="9">9単位</option>
+					<option value="10">10単位</option>
+					<option value="11">11単位</option>
+					<option value="12">12単位</option>
+				</select>
+			</div>
+<!--留学生向け専門科目-->
+			<div data-role="fieldcontain">
+				<label for="ryugaku">＜留学生向け専門科目＞</label>
+				<select name="ryugaku[]" id="ryugaku" data-native-menu="false">
+					<option value="0" selected disabled></option>
+					<option value="4">世界と日本経済</option>
+				</select>
+			</div>
+<!--ゼミ-->
+			<div data-role="fieldcontain">
+				<label for="semi">＜ゼミナール＞</label>
+				<select name="semi[]" id="semi" data-native-menu="false" multiple>
+					<option value="0" selected disabled></option>
+					<option value="4">ゼミ(３年次)</option>
+					<option value="4">ゼミ(４年次)</option>
+				</select>
+			</div>
+			<input type="submit" value="送信" />
+			</form>
+	</div>
+	<div data-role="footer">
+		<h4>気になる点などは<a href="http://twitter.com/razokulover">Yuhei Nakasaka</a>までリプライをいただけるとありがたいです</h4>
+		<h4>Copyright &copy; 2012 <a href="http://twitter.com/razokulover">Yuhei Nakasaka</a></h4>
+	</div>
+</div>
+</body>
+</html>
