@@ -123,7 +123,7 @@ if($gakka == "keishisu"){
 <body>
 <div data-role="page" id="home">
 	<div data-role="header">
-		<h1><font color="#4169e1">result</font></h1>
+		<h1>YNU</h1>
 	</div>
 	<div data-role="content">
 	<?php if($gakka=="keishisu"):?>
